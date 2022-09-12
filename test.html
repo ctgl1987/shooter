@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<script>
+var canvas=document.getElementById("canvas");
+var ctx=canvas.getContext("2d");
+var cw=canvas.width;
+var ch=canvas.height;
+
+var img=new Image();
+img.onload=start;
+img.src="assets/images/ship_gray.png";
+function start(){
+
+    // create a fully green version of img
+    var c=document.createElement('canvas');
+    var cctx=c.getContext('2d');
+    c.width=canvas.width=img.width;
+	c.height=canvas.height=img.height;
+	
+    cctx.drawImage(img,0,0);
+    cctx.globalCompositeOperation='source-atop';
+    // cctx.fillStyle='orange';
+    cctx.fillRect(0,0,img.width,img.height);  
+    cctx.globalCompositeOperation='source-over';
+
+    // draw the grayscale image onto the canvas
+    ctx.drawImage(img,0,0);
+
+    // set compositing to color (changes hue with new overwriting colors) 
+    ctx.globalCompositeOperation='color';
+
+    // draw the fully green img on top of the grayscale image
+    // ---- the img is now greenscale ----
+    ctx.drawImage(c,0,0);
+    
+    // Always clean up -- change compositing back to default
+    ctx.globalCompositeOperation='source-over';
+}
+</script>
+</body>
+</html>

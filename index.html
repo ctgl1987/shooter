@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shooter</title>
+    <!--<link rel="shortcut icon" href="assets/images/ship_white.png" type="image/x-icon">-->
+    <link rel="icon" href="data:,">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class='game_container'>
+	<canvas id="game_canvas"></canvas>
+	<canvas id="ui_canvas"></canvas>
+</div>
+<div class='info'>
+	<div>
+		<div>Arrows: Move</div>
+		<div>Space: Fire</div>
+		<div>Key H: Drop Shield</div>
+		<div>Escape: Pause</div>
+		<div>Key M: Sound</div>
+		<div>Key F: Autofire</div>
+		<div><s>Key D: Debug</s></div>
+	</ul>
+</div>
+<div style="text-align: left;">
+	<div id='log'></div>
+	<div id='log2'></div>
+</div>
+<script>
+function log(str)
+{
+	document.querySelector("#log").innerText = str;
+}
+function log2(str)
+{
+	document.querySelector("#log2").innerText = str;
+}
+</script>
+<script src="assets/js/class.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/ecs.js"></script>
+<script src="assets/js/draw.js"></script>
+<script src="assets/js/objects.js"></script>
+<script src="assets/js/data.js"></script>
+
+<script src="assets/js/scenes/loading.js"></script>
+<script src="assets/js/scenes/intro.js"></script>
+<script src="assets/js/scenes/menu.js"></script>
+<script src="assets/js/scenes/options.js"></script>
+<script src="assets/js/scenes/instructions.js"></script>
+<script src="assets/js/scenes/continue.js"></script>
+<script src="assets/js/scenes/play.js"></script>
+<script src="assets/js/scenes/pause.js"></script>
+<script src="assets/js/scenes/gameover.js"></script>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

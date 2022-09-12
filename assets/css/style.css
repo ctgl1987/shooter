@@ -1,0 +1,23 @@
+*{
+	box-sizing: border-box;
+}
+html,
+body{
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	background-color: #1b1b1b;
+	color: #fff;
+	font-family: sans-serif;
+	font-size: 16px;
+}
+.game_container{
+	/*background-color: #000;*/
+	margin: 10px auto;
+	position: relative;
+}
+.game_container canvas{
+	position: absolute;
+    top: 0px;
+    left: 0px;
+}
